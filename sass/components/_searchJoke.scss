@@ -1,0 +1,45 @@
+.search-joke__container {
+  background-color: #e0e0e0;;
+  margin: 0px 295px 20px 295px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.search-bar {
+  margin: 20px 0px;
+}
+
+.search-bar__box {
+  width: 265px;
+  padding: 5px;
+  border: none;
+  font-size: 12px;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-joke__btn {
+  background-color: #015ddd;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 20px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-joke__btn:hover {
+  background-color: #1173fb;
+}
+
+.search__description {
+  background-color: #ffffff;
+  margin: 0px 25px 15px 25px;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  width: 325px;
+}
