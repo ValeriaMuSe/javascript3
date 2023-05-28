@@ -1,6 +1,6 @@
 const searchForm = document.getElementById('searchForm')
 const searchBox = document.getElementById('searchBox')
-const searchResult = document.getElementById('search1') 
+const searchResult = document.getElementById('search') 
 
 searchForm.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -19,8 +19,8 @@ function searchJoke(searchWord) {
         const jokes = data.results;
         let jokesText = '';
 
-        for (let i = 0; i < 4 && i < jokes.length; i++) {
-          jokesText += `${jokes[i].joke}<p></p>`;
+        for (let i = 0; i < jokes.length; i++) {
+          jokesText += `<li>${jokes[i].joke}</li>`;
         }
 
         searchResult.innerHTML = jokesText;
