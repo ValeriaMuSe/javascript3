@@ -16,8 +16,12 @@
 .random__container {
   background-color: #e0e0e0;
   margin: 0px 295px 20px 295px;
-  height: 150px;
+  height: 170px;
   border-radius: 5px;
+}
+
+.random__container--margin {
+  margin: 0px 295px 20px 0px;
 }
 
 .joke__description {

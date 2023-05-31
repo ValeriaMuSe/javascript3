@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/styles.css">
+  <title>Product</title>
+</head>
+<body>
+  <main class="content">
+    <section class="">
+      <div class="">
+        <img id="main__image" class="main__image" src="../image/shirt-black.jpg"/>
+        <p id="joke__shirt" class="jokeIn-product"></p>
+      </div>
+      <div class="color__container">
+        <div class="color__content">
+          <input data-id="black" class="color black-color" type="radio" name="color">
+          <label for="">Black</label>
+        </div>
+        <div class="color__content">
+          <input data-id="white" class="color white-color" type="radio" name="color">
+          <label for="">White</label>
+        </div>
+      </div>
+      <div id="otherProducts">
+        <p class="otherProducts__title">Choose another product</p>
+        <div class="otherProducts">
+          <a href="../html/product.html"><img class="otherProducts__image" src="../image/pillow-black.jpg" alt=""></a>
+          <a href="../html/product.html"><img class="otherProducts__image" src="../image/case-black.jpg" alt=""></a>
+          <a href="../html/product.html"><img class="otherProducts__image" src="../image/poster-black.jpeg" alt=""></a>
+        </div>
+      </div>
+    </section>
+    <section class="product__content">
+      <h1 id="" class="product__title">White shirt with joke</h1>
+      <p id="" class="product__price">$10</p>
+      <p id="joke__product" class="product__joke"></p>
+      <div class="container--flex random__container random__container--margin">
+        <p class="joke__description container-shadow" id="randomP"></p>
+        <button class="random-joke__btn" id="randomBtn">Get another joke!</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="../main.js"></script>
+</body>
+</html>

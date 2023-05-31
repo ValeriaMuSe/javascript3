@@ -1,3 +1,5 @@
+import { searchApiUrl } from './api.js';
+
 const searchForm = document.getElementById('searchForm')
 const searchBox = document.getElementById('searchBox')
 const searchResult = document.getElementById('search') 
@@ -10,7 +12,7 @@ searchForm.addEventListener('submit', function(event) {
 });
 
 function searchJoke(searchWord) {
-  const api = `https://icanhazdadjoke.com/search?term=${searchWord}`;
+  const api = searchApiUrl(searchWord);
 
   function searchingJoke() {
     fetch(api, { headers: { 'Accept': 'application/json'} })
@@ -20,7 +22,9 @@ function searchJoke(searchWord) {
         let jokesText = '';
 
         for (let i = 0; i < jokes.length; i++) {
-          jokesText += `<li>${jokes[i].joke}</li>`;
+          jokesText += `<li id="joke-${i + 1}">
+            <a href="html/product.html">${jokes[i].joke}</a>
+          </li>`;
         }
 
         searchResult.innerHTML = jokesText;
