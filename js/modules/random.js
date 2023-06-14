@@ -9,10 +9,12 @@ async function renderJoke() {
   const randomJokeElement = document.getElementById('randomP');
   const jokeShirtElements = document.querySelectorAll("#joke__shirt, #joke__product");
 
-  randomJokeElement.innerHTML = joke;
+  randomJokeElement.innerHTML = `<a href="../../product.html?id=${data.id}">${joke}</a>`;
+
   jokeShirtElements.forEach(element => {
     element.innerHTML = joke;
   });
+
   jokeChange.publish(joke);
 }
 

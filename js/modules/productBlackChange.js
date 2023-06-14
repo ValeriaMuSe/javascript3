@@ -1,4 +1,9 @@
-export async function addDynamicImages() {
+import { imageBlackProducts } from './productData.js';
+import { Publisher } from '../publisher/publisher.js';
+
+const blackChange = new Publisher();
+
+export async function detailsChangeBlack() {
   const imageContainer = document.getElementById('otherProducts');
   const mainImage = document.getElementById('main__image');
   const jokeShirt = document.getElementById('joke__shirt');
@@ -19,7 +24,17 @@ export async function addDynamicImages() {
     image.addEventListener('click', () => {
       const imageUrl = image.getAttribute('src');
       mainImage.setAttribute('src', imageUrl);
-      jokeShirt.innerText = '';
+
+      const productData = imageBlackProducts[imageUrl];
+      if (productData) {
+        const { title, price } = productData;
+        document.getElementById('product__title').textContent = title;
+        document.getElementById('product__price').textContent = price;
+
+        blackChange.publish({ title, price });
+      }
+
+      jokeShirt.innerText = ' ';
     });
   });
 }

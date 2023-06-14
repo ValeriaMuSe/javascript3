@@ -1,11 +1,14 @@
 import { getWordJoke } from '../services/api.js';
+import { Publisher } from '../publisher/publisher.js';
 
 const searchResult = document.getElementById('search')
 const searchForm = document.getElementById('searchForm');
-const searchBox = document.getElementById('searchBox'); 
+const searchBox = document.getElementById('searchBox');
+
+const publisher = new Publisher();
 
 async function searchJoke(searchWord) {
-  const data = await getWordJoke(searchWord); 
+  const data = await getWordJoke(searchWord);
   const jokes = data.results;
 
   let jokesText = '';
@@ -16,8 +19,9 @@ async function searchJoke(searchWord) {
   }
 
   searchResult.innerHTML = jokesText;
-}
 
+  publisher.publish(jokesText);
+}
 
 const initSearchJoke = () => {
   searchForm.addEventListener('submit', function (event) {
@@ -27,5 +31,9 @@ const initSearchJoke = () => {
     searchJoke(searchWord);
   });
 };
+
+publisher.subscribe((data) => {
+  searchResult.innerHTML = data;
+});
 
 export { initSearchJoke };
